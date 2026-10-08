@@ -1,0 +1,1607 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Ghanim &amp; Mehwish · One Year</title>
+<meta name="description" content="One year. Every word of this is for you." />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#100710;
+    --ink:#f9f1f4;
+    --muted:#c9a7b7;
+    --rose:#f4a6bf;
+    --gold:#e6c28e;
+    --plum:#8e3f6b;
+    --line:rgba(244,166,191,.16);
+    --card:rgba(255,255,255,.035);
+    --radius:22px;
+  }
+
+  *{box-sizing:border-box;margin:0;padding:0}
+
+  html{scroll-behavior:smooth}
+
+  body{
+    background:var(--bg);
+    color:var(--ink);
+    font-family:'Inter',system-ui,-apple-system,'Segoe UI',sans-serif;
+    font-weight:300;
+    line-height:1.75;
+    -webkit-font-smoothing:antialiased;
+    overflow-x:hidden;
+  }
+
+  body::before{
+    content:'';
+    position:fixed;inset:0;z-index:0;pointer-events:none;
+    background:
+      radial-gradient(950px 650px at 10% 0%, rgba(244,166,191,.17), transparent 62%),
+      radial-gradient(850px 640px at 92% 20%, rgba(230,194,142,.11), transparent 62%),
+      radial-gradient(1200px 900px at 50% 106%, rgba(142,63,107,.34), transparent 68%);
+  }
+
+  body::after{
+    content:'';
+    position:fixed;inset:0;z-index:1;pointer-events:none;
+    opacity:.2;mix-blend-mode:overlay;
+    background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='220' height='220'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='3'/%3E%3C/filter%3E%3Crect width='220' height='220' filter='url(%23n)'/%3E%3C/svg%3E");
+  }
+
+  .progress{
+    position:fixed;top:0;left:0;height:2px;width:0%;z-index:60;
+    background:linear-gradient(90deg,var(--rose),var(--gold));
+    box-shadow:0 0 16px rgba(244,166,191,.65);
+    transition:width .12s linear;
+  }
+
+  /* ══ HERO ══ */
+  .hero{
+    position:relative;z-index:2;
+    min-height:100svh;
+    display:flex;flex-direction:column;align-items:center;justify-content:center;
+    text-align:center;
+    padding:120px 24px 100px;
+  }
+
+  .eyebrow{
+    font-size:.7rem;letter-spacing:.45em;text-transform:uppercase;
+    color:var(--rose);opacity:.85;margin-bottom:28px;
+  }
+
+  .names{
+    font-family:'Cormorant Garamond',serif;
+    font-weight:600;
+    font-size:clamp(2.8rem,9.4vw,7rem);
+    line-height:1;
+    letter-spacing:-.02em;
+    background:linear-gradient(118deg,#ffffff 6%,var(--rose) 46%,var(--gold) 86%);
+    -webkit-background-clip:text;background-clip:text;
+    color:transparent;
+    padding:0 .06em .1em;
+  }
+  .names .amp{
+    display:inline-block;font-style:italic;font-weight:400;
+    font-size:.58em;opacity:.7;
+    transform:translateY(-.14em);margin:0 .1em;
+  }
+
+  .tagline{
+    font-family:'Cormorant Garamond',serif;
+    font-style:italic;
+    font-size:clamp(1.1rem,3.4vw,1.65rem);
+    color:var(--muted);margin-top:16px;letter-spacing:.03em;
+  }
+
+  .ornament{
+    display:flex;align-items:center;justify-content:center;gap:14px;
+    margin:36px auto 32px;width:min(300px,72vw);
+  }
+  .ornament i{flex:1;height:1px;background:linear-gradient(90deg,transparent,var(--line),transparent)}
+  .ornament span{color:var(--rose);font-size:.85rem;opacity:.9}
+
+  .lede{
+    max-width:700px;
+    font-size:clamp(1.02rem,2.5vw,1.2rem);
+    color:#edd9e2;line-height:2;
+  }
+
+  .counter{
+    display:flex;gap:clamp(16px,5vw,48px);
+    margin-top:50px;flex-wrap:wrap;justify-content:center;
+  }
+  .counter .unit{min-width:64px}
+  .counter .num{
+    font-family:'Cormorant Garamond',serif;
+    font-size:clamp(1.8rem,5.2vw,2.5rem);
+    font-weight:600;line-height:1;color:var(--ink);
+    font-variant-numeric:tabular-nums;
+  }
+  .counter .lbl{
+    display:block;margin-top:10px;
+    font-size:.58rem;letter-spacing:.3em;text-transform:uppercase;
+    color:var(--muted);opacity:.75;
+  }
+
+  .scroll-cue{
+    margin-top:70px;color:var(--muted);text-decoration:none;
+    font-size:1.3rem;animation:bob 2.6s ease-in-out infinite;opacity:.6;
+  }
+  .scroll-cue:hover{opacity:1}
+  @keyframes bob{0%,100%{transform:translateY(0)}50%{transform:translateY(9px)}}
+
+  .petals{position:absolute;inset:0;overflow:hidden;pointer-events:none;z-index:-1}
+  .petal{
+    position:absolute;top:-8%;color:var(--rose);opacity:0;
+    animation:fall linear infinite;will-change:transform,opacity;
+  }
+  @keyframes fall{
+    0%{transform:translate3d(0,-10vh,0) rotate(0deg);opacity:0}
+    12%{opacity:.5}
+    88%{opacity:.35}
+    100%{transform:translate3d(var(--drift,40px),112vh,0) rotate(320deg);opacity:0}
+  }
+
+  main{position:relative;z-index:2}
+
+  /* ══ MARQUEE ══ */
+  .marquee{
+    position:relative;z-index:2;
+    overflow:hidden;
+    border-top:1px solid var(--line);
+    border-bottom:1px solid var(--line);
+    padding:22px 0;
+    background:rgba(255,255,255,.014);
+    mask-image:linear-gradient(90deg,transparent,#000 12%,#000 88%,transparent);
+    -webkit-mask-image:linear-gradient(90deg,transparent,#000 12%,#000 88%,transparent);
+  }
+  .marquee-track{
+    display:flex;width:max-content;
+    animation:slide 46s linear infinite;
+  }
+  .marquee-track span{
+    font-family:'Cormorant Garamond',serif;
+    font-style:italic;
+    font-size:clamp(1rem,2.6vw,1.4rem);
+    color:var(--muted);
+    padding:0 30px;
+    white-space:nowrap;
+    opacity:.75;
+  }
+  .marquee-track span b{
+    color:var(--rose);font-weight:400;
+  }
+  @keyframes slide{
+    from{transform:translateX(0)}
+    to{transform:translateX(-50%)}
+  }
+
+  /* ══ SECTION ══ */
+  .section{
+    max-width:1080px;
+    margin:0 auto;
+    padding:clamp(84px,11vw,150px) 24px;
+  }
+
+  .section-title{
+    font-family:'Cormorant Garamond',serif;
+    font-weight:600;
+    font-size:clamp(1.9rem,5.6vw,3.3rem);
+    line-height:1.15;
+    letter-spacing:-.01em;
+    text-align:center;
+    color:#fef6f9;
+  }
+  .section-title i{
+    font-style:italic;font-weight:400;
+    background:linear-gradient(100deg,var(--rose),var(--gold));
+    -webkit-background-clip:text;background-clip:text;color:transparent;
+  }
+
+  .section-sub{
+    text-align:center;color:var(--muted);
+    max-width:620px;margin:18px auto 0;
+    font-size:1rem;
+  }
+
+  .divider{
+    display:flex;align-items:center;justify-content:center;gap:12px;
+    margin:60px auto 0;width:min(230px,60vw);
+  }
+  .divider i{flex:1;height:1px;background:linear-gradient(90deg,transparent,var(--line),transparent)}
+  .divider span{color:var(--rose);font-size:.7rem;opacity:.7}
+
+  /* ══ BIG STATEMENTS ══ */
+  .statements{
+    margin-top:70px;
+    display:flex;flex-direction:column;
+    gap:clamp(46px,7vw,80px);
+  }
+
+  .statement{
+    font-family:'Cormorant Garamond',serif;
+    font-weight:400;
+    font-size:clamp(1.45rem,4.6vw,2.7rem);
+    line-height:1.4;
+    letter-spacing:-.01em;
+    text-align:center;
+    color:#f6e6ec;
+    max-width:900px;
+    margin:0 auto;
+    position:relative;
+  }
+  .statement b{
+    font-weight:600;
+    background:linear-gradient(100deg,var(--rose),var(--gold));
+    -webkit-background-clip:text;background-clip:text;color:transparent;
+  }
+  .statement i{font-style:italic;color:var(--rose)}
+  .statement small{
+    display:block;
+    font-family:'Inter',sans-serif;
+    font-size:.72rem;
+    letter-spacing:.34em;
+    text-transform:uppercase;
+    color:var(--muted);
+    opacity:.55;
+    margin-bottom:18px;
+    font-weight:300;
+  }
+
+  /* ══ PROOF (the one place for the phone story) ══ */
+  .proof{
+    margin-top:70px;
+    display:flex;flex-direction:column;
+    gap:0;
+  }
+
+  .proof-step{
+    position:relative;
+    padding:clamp(30px,4.5vw,46px) clamp(26px,4vw,44px);
+    background:linear-gradient(180deg,rgba(255,255,255,.045),rgba(255,255,255,.012));
+    border:1px solid var(--line);
+    border-radius:var(--radius);
+    margin-bottom:18px;
+    overflow:hidden;
+    transition:transform .6s cubic-bezier(.16,1,.3,1), border-color .6s, background .6s;
+  }
+  .proof-step::before{
+    content:'';
+    position:absolute;left:0;top:0;bottom:0;width:2px;
+    background:linear-gradient(180deg,transparent,var(--rose),var(--gold),transparent);
+    opacity:.55;
+  }
+  .proof-step:hover{
+    transform:translateY(-4px);
+    border-color:rgba(244,166,191,.34);
+    background:linear-gradient(180deg,rgba(255,255,255,.07),rgba(255,255,255,.02));
+  }
+
+  .proof-step .step-num{
+    font-family:'Cormorant Garamond',serif;
+    font-size:2.6rem;
+    font-weight:600;
+    line-height:1;
+    color:rgba(244,166,191,.22);
+    margin-bottom:12px;
+  }
+
+  .proof-step h3{
+    font-family:'Cormorant Garamond',serif;
+    font-weight:600;
+    font-size:clamp(1.3rem,3.4vw,1.75rem);
+    line-height:1.3;
+    color:#fef6f9;
+    margin-bottom:12px;
+  }
+  .proof-step p{
+    color:#dcc4cf;
+    font-size:clamp(.96rem,2.2vw,1.05rem);
+    line-height:1.9;
+    max-width:720px;
+  }
+  .proof-step p + p{margin-top:14px}
+  .proof-step em{color:var(--rose);font-style:italic}
+  .proof-step strong{color:var(--gold);font-weight:600}
+
+  .proof-closing{
+    margin-top:34px;
+    text-align:center;
+    font-family:'Cormorant Garamond',serif;
+    font-style:italic;
+    font-size:clamp(1.25rem,3.4vw,1.9rem);
+    line-height:1.5;
+    color:#f6e6ec;
+    max-width:760px;
+    margin-left:auto;margin-right:auto;
+  }
+  .proof-closing b{
+    font-weight:600;font-style:normal;
+    background:linear-gradient(100deg,var(--rose),var(--gold));
+    -webkit-background-clip:text;background-clip:text;color:transparent;
+  }
+
+  /* ══ REASONS ══ */
+  .reasons{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(285px,1fr));
+    gap:18px;
+    margin-top:66px;
+  }
+
+  .reason{
+    display:flex;gap:18px;align-items:flex-start;
+    background:var(--card);
+    border:1px solid var(--line);
+    border-radius:var(--radius);
+    padding:28px 26px;
+    transition:transform .5s cubic-bezier(.16,1,.3,1), border-color .5s, background .5s;
+  }
+  .reason:hover{
+    transform:translateY(-6px);
+    border-color:rgba(244,166,191,.36);
+    background:rgba(255,255,255,.06);
+  }
+  .reason .emoji{
+    font-size:1.55rem;line-height:1;
+    filter:drop-shadow(0 0 14px rgba(244,166,191,.4));
+    margin-top:4px;
+  }
+  .reason h3{
+    font-family:'Cormorant Garamond',serif;
+    font-weight:600;font-size:1.32rem;
+    color:#fef6f9;margin-bottom:8px;
+  }
+  .reason p{color:#d8bfcb;font-size:.94rem;line-height:1.85}
+  .reason em{color:var(--rose);font-style:italic}
+
+  /* ══ DISTANCE ══ */
+  .distance{
+    position:relative;
+    max-width:960px;
+    margin:0 auto;
+    padding:clamp(84px,11vw,150px) 24px;
+    text-align:center;
+  }
+  .distance .stars{position:absolute;inset:0;pointer-events:none;z-index:-1;overflow:hidden}
+  .distance .stars span{
+    position:absolute;width:2px;height:2px;border-radius:50%;
+    background:#fff;opacity:.3;
+    box-shadow:0 0 7px rgba(255,255,255,.65);
+    animation:twinkle 4s ease-in-out infinite;
+  }
+  @keyframes twinkle{0%,100%{opacity:.12}50%{opacity:.7}}
+
+  .distance-card{
+    margin-top:60px;
+    background:linear-gradient(180deg,rgba(255,255,255,.055),rgba(255,255,255,.012));
+    border:1px solid var(--line);
+    border-radius:28px;
+    padding:clamp(34px,5.6vw,68px);
+    position:relative;overflow:hidden;text-align:left;
+  }
+  .distance-card::before{
+    content:'';position:absolute;top:-1px;left:12%;right:12%;height:1px;
+    background:linear-gradient(90deg,transparent,rgba(244,166,191,.6),transparent);
+  }
+  .distance-card p{
+    font-family:'Cormorant Garamond',serif;
+    font-size:clamp(1.1rem,2.7vw,1.32rem);
+    line-height:1.95;color:#eedae3;margin-bottom:24px;
+  }
+  .distance-card p:last-child{margin-bottom:0}
+  .distance-card .whisper{
+    font-style:italic;color:var(--rose);
+    font-size:clamp(1.18rem,3vw,1.5rem) !important;
+  }
+  .distance-card strong{color:var(--gold);font-weight:600}
+  .distance-card i{color:var(--rose);font-style:italic}
+
+  /* ══ TODAY (the fight) ══ */
+  .today{
+    position:relative;
+    max-width:920px;
+    margin:0 auto;
+    padding:clamp(84px,11vw,150px) 24px;
+  }
+  .today-card{
+    background:linear-gradient(180deg,rgba(255,255,255,.06),rgba(255,255,255,.012));
+    border:1px solid rgba(244,166,191,.28);
+    border-radius:28px;
+    padding:clamp(34px,5.6vw,72px);
+    position:relative;overflow:hidden;
+  }
+  .today-card::before{
+    content:'';position:absolute;top:-1px;left:12%;right:12%;height:1px;
+    background:linear-gradient(90deg,transparent,rgba(244,166,191,.7),transparent);
+  }
+  .today-card p{
+    font-family:'Cormorant Garamond',serif;
+    font-size:clamp(1.1rem,2.7vw,1.3rem);
+    line-height:1.95;color:#eedae3;margin-bottom:24px;
+  }
+  .today-card p:last-child{margin-bottom:0}
+  .today-card i{color:var(--rose);font-style:italic}
+  .today-card strong{color:var(--gold);font-weight:600}
+  .today-card .declare{
+    font-size:clamp(1.4rem,4vw,2rem) !important;
+    line-height:1.4 !important;
+    text-align:center;
+    color:#fef6f9 !important;
+    font-weight:600;
+    margin:34px 0 !important;
+  }
+  .today-card .declare b{
+    font-weight:600;
+    background:linear-gradient(100deg,var(--rose),var(--gold));
+    -webkit-background-clip:text;background-clip:text;color:transparent;
+  }
+
+  /* ══ JEALOUSY ══ */
+  .jealous{
+    position:relative;
+    max-width:920px;
+    margin:0 auto;
+    padding:clamp(84px,11vw,150px) 24px;
+  }
+  .jealous-card{
+    background:linear-gradient(180deg,rgba(255,255,255,.055),rgba(255,255,255,.012));
+    border:1px solid var(--line);
+    border-radius:28px;
+    padding:clamp(34px,5.6vw,68px);
+    position:relative;overflow:hidden;
+  }
+  .jealous-card::before{
+    content:'';position:absolute;top:-1px;left:12%;right:12%;height:1px;
+    background:linear-gradient(90deg,transparent,rgba(244,166,191,.6),transparent);
+  }
+  .jealous-card p{
+    font-family:'Cormorant Garamond',serif;
+    font-size:clamp(1.1rem,2.7vw,1.3rem);
+    line-height:1.95;color:#eedae3;margin-bottom:24px;
+  }
+  .jealous-card p:last-child{margin-bottom:0}
+  .jealous-card i{color:var(--rose);font-style:italic}
+  .jealous-card strong{color:var(--gold);font-weight:600}
+  .jealous-card .pull{
+    font-size:clamp(1.35rem,3.8vw,1.95rem) !important;
+    line-height:1.45 !important;
+    text-align:center;
+    color:#fef6f9 !important;
+    font-weight:600;
+    margin:36px 0 !important;
+  }
+  .jealous-card .pull b{
+    font-weight:600;
+    background:linear-gradient(100deg,var(--rose),var(--gold));
+    -webkit-background-clip:text;background-clip:text;color:transparent;
+  }
+
+  /* ══ REUNION COUNTDOWN ══ */
+  .reunion{
+    margin-top:60px;
+    text-align:center;
+    padding:clamp(38px,6vw,70px) clamp(24px,4vw,50px);
+    background:linear-gradient(180deg,rgba(244,166,191,.09),rgba(255,255,255,.015));
+    border:1px solid rgba(244,166,191,.28);
+    border-radius:28px;
+    position:relative;overflow:hidden;
+  }
+  .reunion::before{
+    content:'';position:absolute;top:-1px;left:14%;right:14%;height:1px;
+    background:linear-gradient(90deg,transparent,rgba(244,166,191,.8),transparent);
+  }
+  .reunion .rlabel{
+    font-size:.68rem;letter-spacing:.36em;text-transform:uppercase;
+    color:var(--rose);opacity:.85;margin-bottom:22px;
+  }
+  .reunion .rbig{
+    font-family:'Cormorant Garamond',serif;
+    font-size:clamp(3.4rem,13vw,7.5rem);
+    font-weight:600;
+    line-height:.95;
+    letter-spacing:-.03em;
+    background:linear-gradient(118deg,#ffffff 6%,var(--rose) 50%,var(--gold) 92%);
+    -webkit-background-clip:text;background-clip:text;color:transparent;
+    font-variant-numeric:tabular-nums;
+    padding:0 .05em .08em;
+  }
+  .reunion .rsub{
+    font-family:'Cormorant Garamond',serif;
+    font-style:italic;
+    font-size:clamp(1rem,2.6vw,1.3rem);
+    color:var(--muted);
+    margin-top:16px;
+    letter-spacing:.02em;
+  }
+  .reunion .rnote{
+    font-size:.82rem;
+    color:var(--muted);
+    opacity:.65;
+    margin-top:26px;
+    line-height:1.8;
+    max-width:520px;
+    margin-left:auto;margin-right:auto;
+  }
+  .reunion .rtarget{
+    display:inline-block;
+    margin-top:18px;
+    font-size:.72rem;
+    letter-spacing:.2em;
+    text-transform:uppercase;
+    color:var(--rose);
+    border:1px solid rgba(244,166,191,.35);
+    border-radius:100px;
+    padding:8px 20px;
+    opacity:.9;
+  }
+
+  /* ══ PROMISES ══ */
+  .promises{
+    margin-top:66px;
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+    gap:16px;
+  }
+  .promise{
+    display:flex;gap:16px;align-items:flex-start;
+    padding:24px 26px;
+    border-radius:var(--radius);
+    border:1px solid var(--line);
+    background:rgba(255,255,255,.028);
+    transition:transform .5s cubic-bezier(.16,1,.3,1), border-color .5s, background .5s;
+  }
+  .promise:hover{
+    transform:translateY(-5px);
+    border-color:rgba(244,166,191,.34);
+    background:rgba(255,255,255,.055);
+  }
+  .promise .tick{
+    flex-shrink:0;
+    width:26px;height:26px;border-radius:50%;
+    display:grid;place-items:center;
+    border:1px solid rgba(244,166,191,.4);
+    color:var(--rose);
+    font-size:.7rem;
+    margin-top:3px;
+    background:rgba(244,166,191,.07);
+  }
+  .promise p{
+    font-family:'Cormorant Garamond',serif;
+    font-size:clamp(1.05rem,2.5vw,1.2rem);
+    line-height:1.7;
+    color:#f0dfe6;
+  }
+  .promise p b{
+    color:var(--rose);font-weight:600;
+  }
+
+  /* ══ LETTER ══ */
+  .letter{
+    margin-top:64px;
+    background:linear-gradient(180deg,rgba(255,255,255,.05),rgba(255,255,255,.014));
+    border:1px solid var(--line);
+    border-radius:28px;
+    padding:clamp(34px,5.6vw,72px);
+    position:relative;overflow:hidden;
+  }
+  .letter::before{
+    content:'';position:absolute;top:-1px;left:12%;right:12%;height:1px;
+    background:linear-gradient(90deg,transparent,rgba(244,166,191,.6),transparent);
+  }
+
+  .letter p{
+    font-family:'Cormorant Garamond',serif;
+    font-size:clamp(1.08rem,2.6vw,1.28rem);
+    line-height:1.95;color:#eedae3;margin-bottom:24px;
+  }
+  .letter p:first-child{
+    font-size:clamp(1.3rem,3.4vw,1.7rem);
+    color:#fef6f9;font-style:italic;
+  }
+  .letter p:last-child{margin-bottom:0}
+  .letter i{color:var(--rose);font-style:italic}
+  .letter strong{color:var(--gold);font-weight:600}
+  .letter em{color:var(--rose);font-style:italic;font-size:1.06em}
+
+  .sign{
+    font-family:'Cormorant Garamond',serif;
+    font-style:italic;
+    font-size:1.25rem !important;
+    color:var(--rose) !important;
+    margin-top:38px !important;
+    line-height:1.6 !important;
+  }
+
+  /* ══ FINALE ══ */
+  .finale{
+    text-align:center;
+    max-width:900px;
+    margin:0 auto;
+    padding:clamp(90px,12vw,160px) 24px clamp(70px,9vw,110px);
+  }
+  .finale .big{
+    font-family:'Cormorant Garamond',serif;
+    font-size:clamp(2rem,6.5vw,4rem);
+    line-height:1.15;
+    font-weight:600;
+    letter-spacing:-.015em;
+    color:#fef6f9;
+    margin-bottom:34px;
+  }
+  .finale .big i{
+    font-style:italic;font-weight:400;
+    background:linear-gradient(100deg,var(--rose),var(--gold));
+    -webkit-background-clip:text;background-clip:text;color:transparent;
+  }
+  .finale .soft{
+    font-family:'Cormorant Garamond',serif;
+    font-style:italic;
+    font-size:clamp(1.1rem,3vw,1.45rem);
+    color:var(--muted);
+    line-height:1.9;
+    max-width:640px;
+    margin:0 auto;
+  }
+
+  .heart-zone{
+    margin-top:56px;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    gap:22px;
+    min-height:150px;
+  }
+  .heart-btn{
+    width:78px;height:78px;border-radius:50%;
+    border:1px solid rgba(244,166,191,.45);
+    background:radial-gradient(circle at 35% 30%,rgba(244,166,191,.22),rgba(244,166,191,.05));
+    color:var(--rose);
+    font-size:1.9rem;
+    cursor:pointer;
+    display:grid;place-items:center;
+    transition:transform .5s cubic-bezier(.16,1,.3,1), box-shadow .5s, border-color .5s;
+    box-shadow:0 0 0 0 rgba(244,166,191,.35);
+    animation:pulse 3.2s ease-in-out infinite;
+    -webkit-tap-highlight-color:transparent;
+  }
+  .heart-btn:hover{
+    transform:scale(1.08);
+    border-color:rgba(244,166,191,.8);
+    box-shadow:0 0 40px rgba(244,166,191,.35);
+  }
+  @keyframes pulse{
+    0%,100%{box-shadow:0 0 0 0 rgba(244,166,191,.28)}
+    50%{box-shadow:0 0 0 16px rgba(244,166,191,0)}
+  }
+  .heart-hint{
+    font-size:.68rem;letter-spacing:.32em;text-transform:uppercase;
+    color:var(--muted);opacity:.55;
+    transition:opacity .5s;
+  }
+  .heart-msg{
+    font-family:'Cormorant Garamond',serif;
+    font-style:italic;
+    font-size:clamp(1.15rem,3.2vw,1.6rem);
+    line-height:1.7;
+    color:#fef6f9;
+    max-width:600px;
+    opacity:0;
+    transform:translateY(14px);
+    transition:opacity .9s ease, transform .9s cubic-bezier(.16,1,.3,1);
+    pointer-events:none;
+  }
+  .heart-msg.on{opacity:1;transform:none}
+  .heart-msg b{
+    font-weight:600;font-style:normal;
+    background:linear-gradient(100deg,var(--rose),var(--gold));
+    -webkit-background-clip:text;background-clip:text;color:transparent;
+  }
+
+  .burst{
+    position:fixed;
+    pointer-events:none;
+    z-index:80;
+    font-size:1.1rem;
+    color:var(--rose);
+    animation:burstUp 1.6s ease-out forwards;
+  }
+  @keyframes burstUp{
+    0%{transform:translate(0,0) scale(.6);opacity:1}
+    100%{transform:translate(var(--bx),var(--by)) scale(1.1);opacity:0}
+  }
+
+  /* ══ FOOTER ══ */
+  footer{
+    position:relative;z-index:2;
+    text-align:center;
+    padding:70px 24px 100px;
+    color:var(--muted);
+    font-size:.82rem;
+    letter-spacing:.04em;
+    opacity:.7;
+    border-top:1px solid var(--line);
+  }
+  footer span{color:var(--rose)}
+  footer .big-line{
+    font-family:'Cormorant Garamond',serif;
+    font-size:1.1rem;
+    font-style:italic;
+    opacity:.9;
+    margin-bottom:14px;
+    color:#e8d2dc;
+    letter-spacing:.01em;
+  }
+
+  /* ══ REVEAL ══ */
+  .reveal{
+    opacity:0;transform:translateY(28px);
+    transition:opacity 1s ease, transform 1s cubic-bezier(.16,1,.3,1);
+    transition-delay:var(--d,0ms);
+  }
+  .reveal.in{opacity:1;transform:none}
+
+  @media (max-width:560px){
+    .reason{padding:24px 20px}
+    .proof-step{padding:28px 22px}
+    .promise{padding:22px 20px}
+    .counter{gap:22px}
+  }
+
+  @media (prefers-reduced-motion:reduce){
+    *{animation:none !important;transition:none !important}
+    .reveal{opacity:1;transform:none}
+    html{scroll-behavior:auto}
+  }
+</style>
+</head>
+<body>
+
+<div class="progress" id="progress"></div>
+
+<!-- ══════════════ HERO ══════════════ -->
+<header class="hero">
+  <div class="petals" id="petals" aria-hidden="true"></div>
+
+  <p class="eyebrow reveal">October 8 · One Year</p>
+
+  <h1 class="names reveal" style="--d:80ms">
+    Ghanim <span class="amp">&amp;</span> Mehwish
+  </h1>
+
+  <p class="tagline reveal" style="--d:160ms">This whole thing is just me trying to explain it</p>
+
+  <div class="ornament reveal" style="--d:220ms" aria-hidden="true">
+    <i></i><span>♡</span><i></i>
+  </div>
+
+  <p class="lede reveal" style="--d:280ms">
+    I don't know how to put you into a few sentences. I've tried. I've deleted
+    drafts. I've sat there staring at my screen like an idiot. So instead of
+    explaining it neatly, I built you this — every word of it is about how much
+    I love you, and how badly I'm waiting for summer.
+  </p>
+
+  <div class="counter reveal" style="--d:360ms" id="counter">
+    <div class="unit"><div class="num" id="c-days">0</div><span class="lbl">Days</span></div>
+    <div class="unit"><div class="num" id="c-hours">0</div><span class="lbl">Hours</span></div>
+    <div class="unit"><div class="num" id="c-mins">0</div><span class="lbl">Minutes</span></div>
+    <div class="unit"><div class="num" id="c-secs">0</div><span class="lbl">Seconds</span></div>
+  </div>
+
+  <a class="scroll-cue" href="#today" aria-label="Scroll down">↓</a>
+</header>
+
+<!-- ══════════════ MARQUEE ══════════════ -->
+<div class="marquee" aria-hidden="true">
+  <div class="marquee-track" id="marquee">
+    <span>I love you <b>♡</b></span>
+    <span>You are my safe space <b>♡</b></span>
+    <span>I get jealous and I cry and I still love you <b>♡</b></span>
+    <span>I'm still counting the days <b>♡</b></span>
+    <span>You're my angry bird <b>♡</b></span>
+    <span>I see you in my dreams <b>♡</b></span>
+    <span>I'm still choosing you <b>♡</b></span>
+    <span>I love you <b>♡</b></span>
+    <span>You are my safe space <b>♡</b></span>
+    <span>I get jealous and I cry and I still love you <b>♡</b></span>
+    <span>I'm still counting the days <b>♡</b></span>
+    <span>You're my angry bird <b>♡</b></span>
+    <span>I see you in my dreams <b>♡</b></span>
+    <span>I'm still choosing you <b>♡</b></span>
+  </div>
+</div>
+
+<main>
+
+  <!-- ══════════════ TODAY (the fight) ══════════════ -->
+  <section class="today" id="today">
+
+    <h2 class="section-title reveal">Today was supposed to be <i>different.</i></h2>
+    <p class="section-sub reveal" style="--d:80ms">
+      It's our anniversary. And we fought. And I can't fix it with my hands because
+      my hands are in the wrong country.
+    </p>
+
+    <div class="today-card reveal" style="--d:140ms">
+
+      <p>
+        Today is October 8. Our one year. And today we fought — properly fought.
+        You told me you think I don't love you. You cried. And I sat here in a
+        country that isn't mine, in a room you've never seen, with a screen in my
+        hands, completely useless. Because I couldn't hold your face and make you
+        look at me and <i>see</i> it.
+      </p>
+
+      <p class="declare">
+        So let me say it as plainly as I possibly can.<br>
+        <b>I love you. I do. I have never stopped.</b>
+      </p>
+
+      <p>
+        I know I'm not good at showing it the way you need me to. I know I go quiet
+        when I should speak, and I say the wrong thing when I should just say
+        "I love you." I know you've been carrying something heavy and I didn't
+        notice it in time. That's on me. That's mine to fix. And I will fix it.
+      </p>
+
+      <p>
+        But please hear this, because it's true:
+      </p>
+
+      <p>
+        I didn't sit on a balcony stealing Wi‑Fi for someone I didn't love. I didn't
+        go back to school just to stand near the stairs for someone I didn't love.
+        I didn't stand under a tree outside school three times, scared of your
+        brother, <i>for someone I didn't love.</i>
+      </p>
+
+      <p>
+        I did every single one of those things for you. And I'm still doing things
+        for you. This whole website is me doing something for you, right now,
+        because you're crying and I can't be there.
+      </p>
+
+      <p>
+        So if you're going to cry tonight, I want it to be because you finally
+        believe me. Not because you think I don't love you.
+      </p>
+
+    </div>
+
+    <div class="divider reveal" aria-hidden="true"><i></i><span>♡</span><i></i></div>
+  </section>
+
+  <!-- ══════════════ JEALOUSY ══════════════ -->
+  <section class="jealous" id="jealous">
+
+    <h2 class="section-title reveal">And yeah — I get <i>jealous.</i></h2>
+    <p class="section-sub reveal" style="--d:80ms">
+      I'm going to say it, because it's part of this and I'm done hiding pieces of it.
+    </p>
+
+    <div class="jealous-card reveal" style="--d:140ms">
+
+      <p>
+        Sometimes you tell me stories about your friends. About school. About your
+        day. And I love hearing you talk — I always have. Your voice is my favourite
+        thing to come back to.
+      </p>
+
+      <p>
+        But then you say something like <i>“my friend hugged me”</i> or
+        <i>“we were sitting together”</i> or <i>“they came to see me”</i> — and
+        something in my chest just drops. Quietly. Every time.
+      </p>
+
+      <p>
+        Because they get to see you. Every day. They get to sit next to you without
+        thinking about it. They get to hug you. They get to be near you and it costs
+        them nothing, because for them it's just normal. It's just Tuesday.
+      </p>
+
+      <p class="pull">
+        And I would give <b>anything</b><br>
+        for one ordinary Tuesday with you.
+      </p>
+
+      <p>
+        I've cried about it. More than once. More than I'd ever admit to you out
+        loud, and definitely more than I'd admit to anyone else. Not because I don't
+        want you to have a life — I do. I want you to laugh and be happy and be
+        loved by the people around you. I want you to have friends. I want you to
+        have days that are good.
+      </p>
+
+      <p>
+        I just want to be one of them. And I can't be. Not yet. Not until summer.
+      </p>
+
+      <p>
+        So when you tell me those stories, I'm happy for you and I'm hurting at the
+        same time, and I never know how to say both at once. So sometimes I go
+        quiet. I know you've noticed. That quiet isn't me not caring. <strong>That
+        quiet is me trying not to cry on a call.</strong>
+      </p>
+
+      <p>
+        I'm not asking you to stop telling me things. Please don't. I want to know
+        everything — even the parts that hurt me. Because hearing it and hurting is
+        still better than being kept out of your life.
+      </p>
+
+      <p>
+        I just needed you to know what it costs me to hear it. And that I'd still
+        rather hear it than lose you to silence.
+      </p>
+
+    </div>
+
+    <div class="divider reveal" aria-hidden="true"><i></i><span>♡</span><i></i></div>
+  </section>
+
+  <!-- ══════════════ THE TRUTH ══════════════ -->
+  <section class="section">
+    <h2 class="section-title reveal">Let me just say it <i>properly.</i></h2>
+    <p class="section-sub reveal" style="--d:80ms">
+      No timeline. No list of dates. Just the truth about what you are to me.
+    </p>
+
+    <div class="statements">
+
+      <p class="statement reveal">
+        <small>The first thing</small>
+        I don't love you because of what you do for me.<br>
+        I love you because of <b>what you are to me.</b>
+      </p>
+
+      <p class="statement reveal" style="--d:80ms">
+        <small>The second thing</small>
+        You are the only person I have ever felt <b>completely safe</b> with.<br>
+        Not comfortable. Not happy. <i>Safe.</i> There's a difference.
+      </p>
+
+      <p class="statement reveal" style="--d:160ms">
+        <small>The third thing</small>
+        You could be furious at me, and I'd still be standing there<br>
+        glad that it's <b>you</b> who's angry at me.
+      </p>
+
+      <p class="statement reveal" style="--d:240ms">
+        <small>The fourth thing</small>
+        Distance didn't make me love you less.<br>
+        It just made me <b>sure.</b>
+      </p>
+
+      <p class="statement reveal" style="--d:320ms">
+        <small>The fifth thing</small>
+        I don't want to be your first anything.<br>
+        I want to be the one you <i>keep.</i>
+      </p>
+
+    </div>
+
+    <div class="divider reveal" aria-hidden="true"><i></i><span>♡</span><i></i></div>
+  </section>
+
+  <!-- ══════════════ THE PROOF — the one place for the phone story ══════════════ -->
+  <section class="section">
+    <h2 class="section-title reveal">And here's how you know <i>it's real.</i></h2>
+    <p class="section-sub reveal" style="--d:80ms">
+      I could just say “I love you.” Anyone can say that. So let me show you what
+      I actually did, just to be able to talk to you.
+    </p>
+
+    <div class="proof">
+
+      <div class="proof-step reveal">
+        <div class="step-num">01</div>
+        <h3>I fixed my mom's old phone.</h3>
+        <p>
+          I didn't buy one. I didn't get a new one. I found my mom's old phone,
+          the one nobody was using anymore, and I <em>fixed it myself</em> — because
+          I couldn't stand not having a way to talk to you.
+        </p>
+        <p>
+          That was my whole reason. Not games. Not social media. Not anything else.
+          <strong>Just you.</strong>
+        </p>
+      </div>
+
+      <div class="proof-step reveal" style="--d:80ms">
+        <div class="step-num">02</div>
+        <h3>And then it fell. And it broke.</h3>
+        <p>
+          I remember it. It dropped, and something in it died, and I couldn't fix it.
+          I tried. I couldn't. And the worst part wasn't the phone.
+        </p>
+        <p>
+          The worst part was knowing I might not be able to message you that night.
+          <em>That's</em> what hurt.
+        </p>
+      </div>
+
+      <div class="proof-step reveal" style="--d:160ms">
+        <div class="step-num">03</div>
+        <h3>So I repaired another one.</h3>
+        <p>
+          Because stopping wasn't an option for me. I found another phone, worked on
+          it, got it running. Not for me. <strong>For us.</strong> So I could keep
+          talking to you, keep reading your messages, keep being there.
+        </p>
+      </div>
+
+      <div class="proof-step reveal" style="--d:240ms">
+        <div class="step-num">04</div>
+        <h3>And then I cried to my mom for her old phone.</h3>
+        <p>
+          I actually did that. I <em>cried</em> to my mom — asked her for her old
+          phone, properly, like it mattered more than anything. Because it did.
+        </p>
+        <p>
+          I cried to my mom. Over a phone. <strong>Because it meant talking to you.</strong>
+          Tell me that isn't me being completely gone for you. I dare you.
+        </p>
+      </div>
+
+    </div>
+
+    <p class="proof-closing reveal" style="--d:100ms">
+      I wasn't doing it for a phone.<br>
+      I was doing it so I could have <b>you.</b>
+    </p>
+
+    <div class="divider reveal" aria-hidden="true"><i></i><span>♡</span><i></i></div>
+  </section>
+
+  <!-- ══════════════ REASONS ══════════════ -->
+  <section class="section">
+    <h2 class="section-title reveal">Every little thing about you.</h2>
+    <p class="section-sub reveal" style="--d:80ms">
+      I could keep going forever. You already know I could.
+    </p>
+
+    <div class="reasons">
+
+      <div class="reason reveal">
+        <div class="emoji">👀</div>
+        <div>
+          <h3>Your eyes.</h3>
+          <p>I could look at them forever. There's something about them that makes me forget what I was about to say.</p>
+        </div>
+      </div>
+
+      <div class="reason reveal" style="--d:60ms">
+        <div class="emoji">💇‍♀️</div>
+        <div>
+          <h3>Your hair.</h3>
+          <p>I love your hair. Even when you think it's doing nothing special, I'm still staring at it like an idiot.</p>
+        </div>
+      </div>
+
+      <div class="reason reveal" style="--d:120ms">
+        <div class="emoji">👃</div>
+        <div>
+          <h3>Your nose.</h3>
+          <p>Yes, your nose. I know that's a weird one for an anniversary website. I don't care. I love it.</p>
+        </div>
+      </div>
+
+      <div class="reason reveal" style="--d:180ms">
+        <div class="emoji">💋</div>
+        <div>
+          <h3>Your lips.</h3>
+          <p>I don't even need to explain this one. You already know.</p>
+        </div>
+      </div>
+
+      <div class="reason reveal" style="--d:240ms">
+        <div class="emoji">🫶</div>
+        <div>
+          <h3>Your mommy vibes.</h3>
+          <p>You're somehow strict, cute, caring, bossy, and adorable all at the same time. How am I supposed to survive that?</p>
+        </div>
+      </div>
+
+      <div class="reason reveal" style="--d:300ms">
+        <div class="emoji">😤</div>
+        <div>
+          <h3>My angry bird.</h3>
+          <p>You get angry. Really angry. And I love that too, because it's <em>you</em>. However angry you get, I'll make everything right just to be near you.</p>
+        </div>
+      </div>
+
+      <div class="reason reveal" style="--d:360ms">
+        <div class="emoji">🛡️</div>
+        <div>
+          <h3>My safe space.</h3>
+          <p>You're the only person I've ever felt completely safe with. Whatever's wrong, you're who my heart runs to.</p>
+        </div>
+      </div>
+
+      <div class="reason reveal" style="--d:420ms">
+        <div class="emoji">🧸</div>
+        <div>
+          <h3>The way you'd take care of me.</h3>
+          <p>I want to be your baby sometimes. I want you to play with my hair and tell me to sleep while I pretend I'm not already half gone.</p>
+        </div>
+      </div>
+
+      <div class="reason reveal" style="--d:480ms">
+        <div class="emoji">🌙</div>
+        <div>
+          <h3>The way you feel like home.</h3>
+          <p>Even from another country, even through a screen, talking to you makes everything a little less heavy.</p>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="divider reveal" aria-hidden="true"><i></i><span>♡</span><i></i></div>
+  </section>
+
+  <!-- ══════════════ DISTANCE ══════════════ -->
+  <section class="distance" id="distance">
+    <div class="stars" id="stars" aria-hidden="true"></div>
+
+    <h2 class="section-title reveal">And the distance is <i>still here.</i></h2>
+    <p class="section-sub reveal" style="--d:80ms">
+      I came here in May. It's October now. Five months. Five months of missing you
+      through a screen, and it's not getting easier — it's getting heavier.
+    </p>
+
+    <div class="distance-card reveal" style="--d:140ms">
+
+      <p>
+        I moved to the UAE in May 2026. My parents planned my high school here.
+        And I've been here ever since. It's October now, and I'm still here, and
+        you're still there, and nothing about that has gotten easier.
+      </p>
+
+      <p>
+        I can't explain what this distance is doing to me. Not properly. It's not
+        just missing you — it's the way it turns everything into an argument.
+        The way we fight about things we wouldn't fight about if I could just sit
+        next to you. The way you end up crying and I end up staring at a screen
+        with nothing to say that's big enough.
+      </p>
+
+      <p>
+        But I see you in my dreams. Almost every night. And when I wake up and you're
+        not actually there, it hits me all over again. I cry sometimes. More than
+        sometimes. <i>You probably think I don't. I do.</i> I just never wanted to
+        make you feel guilty for something neither of us chose.
+      </p>
+
+      <p>
+        You are the only person I've ever felt truly safe with. That's not something
+        I say to sound nice. It's the truth. Even from here. Even through a screen.
+        Even across every mile between us.
+      </p>
+
+      <p class="whisper">
+        And whatever it takes — however angry you get, however far this stretches —
+        I'll make everything right. Just to be with you. Just to feel your presence
+        again. I want to be your good boy. I want to be your safe space, the way
+        you've always been mine.
+      </p>
+
+    </div>
+
+    <!-- ══ REUNION COUNTDOWN ══ -->
+    <div class="reunion reveal" style="--d:200ms">
+      <p class="rlabel">Until I can see you again</p>
+      <div class="rbig" id="reunion-days">—</div>
+      <p class="rsub">days until summer break</p>
+
+      <p class="rnote">
+        I can't see you until my summer break. May. June. Whatever the exact day
+        ends up being — it's months, and I'm not going to pretend that's nothing.
+        So here's a counter. Not because I enjoy counting. Because every single day
+        it goes down is one day closer to you.
+      </p>
+
+      <span class="rtarget" id="reunion-target">Summer 2027</span>
+    </div>
+
+    <div class="divider reveal" aria-hidden="true"><i></i><span>♡</span><i></i></div>
+  </section>
+
+  <!-- ══════════════ PROMISES ══════════════ -->
+  <section class="section">
+    <h2 class="section-title reveal">Things I'm not going to <i>break.</i></h2>
+    <p class="section-sub reveal" style="--d:80ms">
+      Not promises to be perfect. Promises to keep showing up.
+    </p>
+
+    <div class="promises">
+
+      <div class="promise reveal">
+        <div class="tick">✓</div>
+        <p>I promise I'll make everything right, <b>however angry you get.</b> Every time. No exceptions.</p>
+      </div>
+
+      <div class="promise reveal" style="--d:60ms">
+        <div class="tick">✓</div>
+        <p>I promise to be <b>your safe space</b>, the way you've always been mine.</p>
+      </div>
+
+      <div class="promise reveal" style="--d:120ms">
+        <div class="tick">✓</div>
+        <p>I promise to be <b>your good boy</b> — not because you asked, but because I want to be.</p>
+      </div>
+
+      <div class="promise reveal" style="--d:180ms">
+        <div class="tick">✓</div>
+        <p>I promise you will <b>never lose me to this distance.</b> Not to the miles, not to the time zones, not to the fights.</p>
+      </div>
+
+      <div class="promise reveal" style="--d:240ms">
+        <div class="tick">✓</div>
+        <p>I promise that when summer comes, <b>I'm coming to you.</b> Not a maybe. Not a hope. A plan.</p>
+      </div>
+
+      <div class="promise reveal" style="--d:300ms">
+        <div class="tick">✓</div>
+        <p>I promise you'll <b>never have to wonder</b> whether I love you. You'll just know. Even from here.</p>
+      </div>
+
+    </div>
+
+    <div class="divider reveal" aria-hidden="true"><i></i><span>♡</span><i></i></div>
+  </section>
+
+  <!-- ══════════════ LETTER ══════════════ -->
+  <section class="section">
+    <h2 class="section-title reveal">Okay. Now let me actually <i>tell you.</i></h2>
+
+    <div class="letter reveal" style="--d:100ms">
+
+      <p>My Mehwish,</p>
+
+      <p>
+        I've restarted this so many times. Every version sounds either too small or
+        too much like a movie. But the truth is, I <em>am</em> that much. I'm that
+        cheesy about you. I'm that gone for you. There's no cool version of this.
+      </p>
+
+      <p>
+        So let me just say it, without trying to be clever about it.
+      </p>
+
+      <p>
+        And I love you. I love talking to you. I love seeing your name on my screen.
+        I love when you annoy me, when you're strict with me, when you're cute
+        without even trying, and when you give me those full mommy vibes like you're
+        somehow my girlfriend and my personal supervisor at the same time.
+      </p>
+
+      <p>And I want the soft things with you too.</p>
+
+      <p>
+        I want to lie next to you one day and not have to say anything. I want to
+        put my head in your hands and sleep there like a baby because I feel safe
+        with you. I want to curl up against you, fall asleep on your chest, wake up
+        and still be there, and annoy you five minutes later. I want to be your baby
+        sometimes. I want to be spoiled by you. I want you to play with my hair and
+        tell me to sleep while I pretend I'm not already half asleep.
+      </p>
+
+      <p>
+        I want the silly things too. I want to make you laugh when you're trying to
+        stay mad at me. I want to send you stupid messages for no reason. I want to
+        know your favorite color, even though somehow after a whole year my brain
+        decided to forget the most basic question ever. 😭 I want to keep learning
+        every tiny thing about you.
+      </p>
+
+      <p>
+        And yes, I love your hair. Your eyes. Your lips. Your nose. Your face when
+        you're being cute. The way you can be strict one second and ridiculously
+        adorable the next. But more than all of it, I love that it's <i>you</i>.
+        If someone else had all the same things, they still wouldn't be you.
+      </p>
+
+      <p>
+        There was one thing that hurt me too. When I found out you had an ex, it hurt
+        more than I knew how to explain. You were my first love, and selfishly, I
+        wanted to be your first love too. But I've realized something: I don't need
+        to be your first to want to be your person. I don't need to own the beginning
+        of your story to be grateful I get to be part of it now.
+      </p>
+
+      <p>
+        And I have to tell you something else, because you deserve to know all of it.
+      </p>
+
+      <p>
+        I get jealous. When you tell me about your friends — the ones who see you
+        every day, who hug you, who sit next to you — I get so jealous I can't
+        breathe properly sometimes. Not at you. At the distance. At the fact that
+        they get for free what I would give anything for.
+      </p>
+
+      <p>
+        I've cried about it. More than once. You've probably heard me go quiet on a
+        call and thought I was annoyed or tired. I wasn't. I was trying not to cry
+        while you talked about your day.
+      </p>
+
+      <p>
+        I'm not asking you to stop. Please never stop telling me things. I want to
+        know everything — even the parts that hurt me. Because hearing it and
+        hurting is still better than being kept out of your life.
+      </p>
+
+      <p>
+        And then the distance came. I moved to the UAE in May. My parents planned my
+        high school here. And just like that, the stairs and the tree turned into a
+        screen and a time zone.
+      </p>
+
+      <p>
+        It's October now. It's our anniversary. And today we fought, and you cried,
+        and you told me you think I don't love you — and I want to scream, because
+        I love you so much it's the loudest thing in my life and you still can't
+        hear it from where you are.
+      </p>
+
+      <p>
+        I'm still here. And I miss you in a way that's honestly embarrassing
+        sometimes. I see you in my dreams almost every night. I wake up and reach
+        for you and you're not there. I cry, Mehwish. I actually cry. You probably
+        think I don't, because I always act strong with you. But I do. I just never
+        wanted to make you feel guilty for something neither of us chose.
+      </p>
+
+      <p>
+        The distance is destroying me. I'm not going to pretend it isn't. It's
+        turning us into people who fight on the one day we should be celebrating.
+        It's making you cry over a love that's completely real. It's making me
+        useless when you need me most.
+      </p>
+
+      <p>
+        And I can't see you until summer. May. June. That's months. I know. I hate
+        it more than you do, I promise you that. But it's the only date I have, so
+        I'm going to hold onto it and count every single day down.
+      </p>
+
+      <p>
+        You are the only person I've ever felt completely safe with. You're my safe
+        space. And I want to be yours. I want to be the person you run to. I want
+        to be your good boy. I want to make everything right, however angry you get,
+        however far the distance stretches.
+      </p>
+
+      <p>
+        You're my angry bird. And I love that about you. I'll fix whatever needs
+        fixing just to be with you. Just to feel your presence. Just to sit next to
+        you without a screen between us.
+      </p>
+
+      <p>
+        You became someone I look for. Someone I miss. Someone I want to tell things
+        to. Someone I want beside me when I'm happy and when I'm having a horrible
+        day. Someone I want to bother for the rest of my life.
+      </p>
+
+      <p>
+        I don't know what every year after this looks like. I don't know where we'll
+        be or how much we'll change. But I know what I want: more nights talking
+        until we're both sleepy. More stupid jokes. More arguments that end with us
+        missing each other. More moments where I look at you and think, “How did I
+        get this lucky?”
+      </p>
+
+      <p>
+        And maybe one day, when we don't have to hide or find secret ways to talk,
+        and when the distance is finally behind us, I'll look back at that balcony,
+        those stairs, and that tree — and laugh at how badly I wanted just one more
+        message from you.
+      </p>
+
+      <p>One year ago, I said yes.</p>
+
+      <p>If you asked me again today, after everything, I'd still say yes. Immediately.</p>
+
+      <p>
+        Happy one year, my love. Thank you for being my girl, my favorite person,
+        my headache, my comfort, and the person I want to fall asleep next to.
+      </p>
+
+      <p>Now come here. I want my baby. ♡</p>
+
+      <p class="sign">Always yours,<br>Ghanim ♡</p>
+
+    </div>
+
+    <div class="divider reveal" aria-hidden="true"><i></i><span>♡</span><i></i></div>
+  </section>
+
+  <!-- ══════════════ FINALE ══════════════ -->
+  <section class="finale">
+
+    <h2 class="big reveal">Still wanting<br><i>you.</i></h2>
+
+    <p class="soft reveal" style="--d:100ms">
+      After the balcony. After the stairs. After the tree. After the jealousy.
+      After the crying. After May. After October. After today's fight. After
+      everything — it's still you.
+    </p>
+
+    <div class="heart-zone reveal" style="--d:180ms">
+      <button class="heart-btn" id="heartBtn" aria-label="Open a message">♡</button>
+      <p class="heart-hint" id="heartHint">press it. it's for you.</p>
+      <p class="heart-msg" id="heartMsg">
+        I love you, Mehwish. Even when I get jealous. Even when I go quiet.
+        Even when I cry and you don't know. <b>Especially then.</b> And I'll wait
+        until summer.
+      </p>
+    </div>
+
+  </section>
+
+</main>
+
+<footer>
+  <p class="big-line">Made by the boy who gets jealous of everyone who gets to see you, cries more than he admits, and is still counting the days until summer.</p>
+  <span>♡</span>
+</footer>
+
+<script>
+(function () {
+  /* ── the anniversary date ── */
+  var START = new Date('2025-10-08T00:00:00');
+
+  /* ── the reunion date ──
+     EDIT THIS to the actual day you'll see her again.
+     Currently set to June 1, 2027. */
+  var REUNION = new Date('2027-06-01T00:00:00');
+
+  var el = {
+    d: document.getElementById('c-days'),
+    h: document.getElementById('c-hours'),
+    m: document.getElementById('c-mins'),
+    s: document.getElementById('c-secs')
+  };
+
+  function pad(n) { return String(n).padStart(2, '0'); }
+
+  function tick() {
+    var ms = Math.max(0, Date.now() - START.getTime());
+    el.d.textContent = Math.floor(ms / 86400000);
+    el.h.textContent = pad(Math.floor(ms / 3600000) % 24);
+    el.m.textContent = pad(Math.floor(ms / 60000) % 60);
+    el.s.textContent = pad(Math.floor(ms / 1000) % 60);
+  }
+  tick();
+  setInterval(tick, 1000);
+
+  /* ── reunion countdown ── */
+  var rd = document.getElementById('reunion-days');
+  var rt = document.getElementById('reunion-target');
+
+  function reunionTick() {
+    var ms = REUNION.getTime() - Date.now();
+    if (ms <= 0) {
+      rd.textContent = '0';
+      rt.textContent = "It's time.";
+      return;
+    }
+    rd.textContent = Math.ceil(ms / 86400000);
+  }
+
+  function formatTarget() {
+    var opts = { month: 'long', year: 'numeric' };
+    rt.textContent = REUNION.toLocaleDateString('en-GB', opts);
+  }
+
+  reunionTick();
+  formatTarget();
+  setInterval(reunionTick, 60000);
+
+  /* ── scroll progress ── */
+  var bar = document.getElementById('progress');
+  function onScroll() {
+    var h = document.documentElement.scrollHeight - window.innerHeight;
+    bar.style.width = (h > 0 ? (window.scrollY / h) * 100 : 0) + '%';
+  }
+  window.addEventListener('scroll', onScroll, { passive: true });
+  onScroll();
+
+  /* ── reveal on scroll ── */
+  var items = document.querySelectorAll('.reveal');
+  if ('IntersectionObserver' in window) {
+    var io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (e) {
+        if (e.isIntersecting) {
+          e.target.classList.add('in');
+          io.unobserve(e.target);
+        }
+      });
+    }, { threshold: 0.12, rootMargin: '0px 0px -60px 0px' });
+    items.forEach(function (i) { io.observe(i); });
+  } else {
+    items.forEach(function (i) { i.classList.add('in'); });
+  }
+
+  var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  /* ── floating petals ── */
+  var wrap = document.getElementById('petals');
+  if (wrap && !reduce) {
+    var glyphs = ['♡', '❤', '♡', '✿', '♡'];
+    var count = window.innerWidth < 640 ? 10 : 18;
+
+    for (var i = 0; i < count; i++) {
+      var p = document.createElement('span');
+      p.className = 'petal';
+      p.textContent = glyphs[Math.floor(Math.random() * glyphs.length)];
+      p.style.left = Math.random() * 100 + '%';
+      p.style.fontSize = (10 + Math.random() * 16) + 'px';
+      p.style.animationDuration = (11 + Math.random() * 14) + 's';
+      p.style.animationDelay = (-Math.random() * 20) + 's';
+      p.style.setProperty('--drift', (Math.random() * 160 - 80) + 'px');
+      wrap.appendChild(p);
+    }
+  }
+
+  /* ── stars for the distance section ── */
+  var starWrap = document.getElementById('stars');
+  if (starWrap && !reduce) {
+    for (var s = 0; s < 40; s++) {
+      var star = document.createElement('span');
+      star.style.left = Math.random() * 100 + '%';
+      star.style.top = Math.random() * 100 + '%';
+      star.style.animationDelay = (-Math.random() * 4) + 's';
+      star.style.animationDuration = (3 + Math.random() * 3) + 's';
+      starWrap.appendChild(star);
+    }
+  }
+
+  /* ── interactive heart ── */
+  var btn = document.getElementById('heartBtn');
+  var msg = document.getElementById('heartMsg');
+  var hint = document.getElementById('heartHint');
+  var opened = false;
+
+  if (btn) {
+    btn.addEventListener('click', function () {
+      if (!opened) {
+        opened = true;
+        msg.classList.add('on');
+        hint.style.opacity = '0';
+        btn.style.animation = 'none';
+        btn.style.transform = 'scale(.92)';
+        setTimeout(function () { btn.style.transform = ''; }, 220);
+
+        if (!reduce) {
+          for (var b = 0; b < 18; b++) {
+            (function (b) {
+              var h = document.createElement('span');
+              h.className = 'burst';
+              h.textContent = Math.random() > .5 ? '♡' : '❤';
+              var r = btn.getBoundingClientRect();
+              h.style.left = (r.left + r.width / 2) + 'px';
+              h.style.top = (r.top + r.height / 2) + 'px';
+              h.style.setProperty('--bx', (Math.random() * 280 - 140) + 'px');
+              h.style.setProperty('--by', (-120 - Math.random() * 220) + 'px');
+              h.style.fontSize = (12 + Math.random() * 18) + 'px';
+              h.style.animationDelay = (b * 45) + 'ms';
+              document.body.appendChild(h);
+              setTimeout(function () { h.remove(); }, 2200);
+            })(b);
+          }
+        }
+      }
+    });
+  }
+})();
+</script>
+
+</body>
+</html>
