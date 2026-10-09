@@ -56,6 +56,197 @@
     transition:width .12s linear;
   }
 
+  /* ══════════════ PASSWORD GATE ══════════════ */
+  .gate{
+    position:fixed;
+    inset:0;
+    z-index:9999;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    justify-content:center;
+    text-align:center;
+    padding:40px 26px;
+    background:
+      radial-gradient(700px 500px at 50% 30%, rgba(246,168,194,.13), transparent 65%),
+      radial-gradient(900px 700px at 50% 100%, rgba(146,58,104,.45), transparent 70%),
+      #100710;
+    transition:opacity .9s ease, visibility .9s ease;
+    overflow-y:auto;
+  }
+  .gate.hidden{
+    opacity:0;
+    visibility:hidden;
+    pointer-events:none;
+  }
+
+  .gate .g-lock{
+    font-size:2.6rem;
+    color:var(--rose);
+    margin-bottom:20px;
+    filter:drop-shadow(0 0 26px rgba(246,168,194,.6));
+    animation:gatePulse 2.4s ease-in-out infinite;
+  }
+  @keyframes gatePulse{
+    0%,100%{transform:scale(1) rotate(-4deg);opacity:.9}
+    50%{transform:scale(1.12) rotate(4deg);opacity:1}
+  }
+
+  .gate .g-title{
+    font-family:'Cormorant Garamond',serif;
+    font-weight:600;
+    font-size:clamp(1.7rem,5.4vw,2.7rem);
+    line-height:1.2;
+    letter-spacing:-.01em;
+    background:linear-gradient(118deg,#ffffff 8%,var(--rose) 55%,var(--gold) 95%);
+    -webkit-background-clip:text;background-clip:text;color:transparent;
+    margin-bottom:18px;
+    padding:0 .05em .08em;
+  }
+
+  .gate .g-msg{
+    font-family:'Cormorant Garamond',serif;
+    font-style:italic;
+    font-size:clamp(1.02rem,2.6vw,1.22rem);
+    line-height:1.95;
+    color:#edd9e2;
+    max-width:560px;
+    margin-bottom:14px;
+  }
+  .gate .g-msg b{
+    font-weight:600;font-style:normal;
+    color:var(--rose);
+  }
+
+  .gate .g-asks{
+    display:flex;
+    flex-direction:column;
+    gap:10px;
+    margin:30px auto 0;
+    max-width:360px;
+    width:100%;
+  }
+  .gate .g-asks span{
+    font-family:'Cormorant Garamond',serif;
+    font-size:clamp(1.02rem,2.6vw,1.18rem);
+    color:#fdf3f6;
+    padding:13px 22px;
+    border-radius:100px;
+    border:1px solid rgba(246,168,194,.3);
+    background:rgba(246,168,194,.05);
+    letter-spacing:.01em;
+    transition:border-color .3s, background .3s, transform .3s;
+  }
+  .gate .g-asks span:hover{
+    border-color:rgba(246,168,194,.6);
+    background:rgba(246,168,194,.09);
+    transform:translateY(-2px) rotate(-1deg);
+  }
+
+  .gate .g-hint{
+    font-family:'Inter',sans-serif;
+    font-size:.72rem;
+    letter-spacing:.28em;
+    text-transform:uppercase;
+    color:var(--muted);
+    opacity:.7;
+    margin:30px 0 20px;
+  }
+
+  .gate form{
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    gap:14px;
+    width:100%;
+    max-width:340px;
+    margin-top:6px;
+  }
+
+  .gate input{
+    width:100%;
+    padding:16px 22px;
+    border-radius:100px;
+    border:1px solid rgba(246,168,194,.4);
+    background:rgba(255,255,255,.04);
+    color:var(--ink);
+    font-family:'Inter',sans-serif;
+    font-size:1rem;
+    letter-spacing:.05em;
+    text-align:center;
+    outline:none;
+    transition:border-color .3s, box-shadow .3s, background .3s;
+    -webkit-appearance:none;
+    appearance:none;
+  }
+  .gate input:focus{
+    border-color:rgba(246,168,194,.85);
+    box-shadow:0 0 0 6px rgba(246,168,194,.12);
+    background:rgba(255,255,255,.06);
+  }
+  .gate input::placeholder{
+    color:var(--muted);
+    opacity:.5;
+    letter-spacing:.1em;
+  }
+
+  .gate button{
+    width:100%;
+    padding:16px 22px;
+    border-radius:100px;
+    border:1px solid rgba(246,168,194,.55);
+    background:radial-gradient(circle at 40% 30%, rgba(246,168,194,.24), rgba(246,168,194,.06));
+    color:var(--rose);
+    font-family:'Inter',sans-serif;
+    font-weight:400;
+    letter-spacing:.22em;
+    text-transform:uppercase;
+    font-size:.76rem;
+    cursor:pointer;
+    transition:transform .35s cubic-bezier(.16,1,.3,1), box-shadow .35s, border-color .35s;
+    -webkit-tap-highlight-color:transparent;
+  }
+  .gate button:hover{
+    transform:translateY(-2px) scale(1.02) rotate(-1deg);
+    border-color:rgba(246,168,194,.95);
+    box-shadow:0 10px 34px rgba(246,168,194,.3);
+  }
+  .gate button:active{transform:scale(.97)}
+
+  .gate .g-error{
+    color:#ff9aa8;
+    font-family:'Inter',sans-serif;
+    font-size:.78rem;
+    letter-spacing:.08em;
+    line-height:1.5;
+    min-height:1.3em;
+    margin-top:6px;
+    opacity:0;
+    transition:opacity .3s;
+    max-width:340px;
+  }
+  .gate .g-error.on{opacity:1}
+
+  .gate.shake{
+    animation:gateShake .5s cubic-bezier(.36,.07,.19,.97);
+  }
+  @keyframes gateShake{
+    10%,90%{transform:translateX(-3px)}
+    20%,80%{transform:translateX(5px)}
+    30%,50%,70%{transform:translateX(-9px)}
+    40%,60%{transform:translateX(9px)}
+  }
+
+  .gate .g-sign{
+    margin-top:36px;
+    font-family:'Caveat', cursive;
+    font-size:1.3rem;
+    color:var(--rose);
+    opacity:.9;
+    letter-spacing:.02em;
+  }
+
+  /* Hero */
   .hero{
     position:relative;z-index:2;
     min-height:100svh;
@@ -258,7 +449,6 @@
   .reason p{color:#dcc2ce;font-size:.95rem;line-height:1.85}
   .reason em{color:var(--rose);font-style:italic}
 
-  /* ══════════════ POLAROID GALLERY ══════════════ */
   .gallery-section{
     padding-top:clamp(70px,9vw,120px);
     padding-bottom:clamp(70px,9vw,120px);
@@ -698,6 +888,48 @@
 </head>
 <body>
 
+<!-- ══════════════ PASSWORD GATE ══════════════ -->
+<div class="gate" id="gate">
+  <div class="g-lock">🙈</div>
+
+  <h1 class="g-title">Hold up, missy ♡</h1>
+
+  <p class="g-msg">
+    We're not done being dramatic about yesterday yet. So before you get in,
+    I need <b>three tiny things</b> from you:
+  </p>
+
+  <div class="g-asks">
+    <span>🙏 say sorry (a real one, not a "sowwy")</span>
+    <span>🐶 call me your good boy</span>
+    <span>💋 give me soooo many kisses</span>
+  </div>
+
+  <p class="g-msg" style="margin-top:30px">
+    Did all that? Good. 😌<br>
+    Now type the password.<br>
+    <b>Hint: it's what I call you ♡</b>
+  </p>
+
+  <p class="g-hint">Enter password</p>
+
+  <form id="gateForm" autocomplete="off">
+    <input
+      type="password"
+      id="gateInput"
+      placeholder="whisper it here..."
+      autocomplete="off"
+      autocapitalize="off"
+      autocorrect="off"
+      spellcheck="false"
+    />
+    <button type="submit">Let me in 🥺</button>
+    <p class="g-error" id="gateError">Nuh uh 😤 try again — and don't forget the three things!</p>
+  </form>
+
+  <p class="g-sign">— your good boy, waiting outside 🥺</p>
+</div>
+
 <div class="progress" id="progress"></div>
 
 <header class="hero">
@@ -850,7 +1082,6 @@
     <div class="divider reveal" aria-hidden="true"><i></i><span>♡</span><i></i></div>
   </section>
 
-  <!-- ══════════════ POLAROID GALLERY ══════════════ -->
   <section class="gallery-section">
     <h2 class="section-title reveal">Us, in <i>pictures.</i></h2>
     <p class="section-sub reveal" style="--d:80ms">
@@ -1088,6 +1319,42 @@
 
 <script>
 (function () {
+  /* ══════════════ PASSWORD ══════════════ */
+  var SECRET = "mommy";
+
+  var gate = document.getElementById('gate');
+  var form = document.getElementById('gateForm');
+  var input = document.getElementById('gateInput');
+  var error = document.getElementById('gateError');
+
+  function unlock(){
+    gate.classList.add('hidden');
+    try { sessionStorage.setItem('unlocked', '1'); } catch(e){}
+  }
+
+  try {
+    if (sessionStorage.getItem('unlocked') === '1') {
+      gate.classList.add('hidden');
+    }
+  } catch(e){}
+
+  if (form) {
+    form.addEventListener('submit', function(e){
+      e.preventDefault();
+      var typed = (input.value || '').trim().toLowerCase();
+      if (typed === SECRET.toLowerCase()) {
+        unlock();
+      } else {
+        error.classList.add('on');
+        gate.classList.add('shake');
+        setTimeout(function(){ gate.classList.remove('shake'); }, 550);
+        input.value = '';
+        input.focus();
+      }
+    });
+  }
+
+  /* ── the rest of the site ── */
   var START = new Date('2025-10-08T00:00:00');
 
   var el = {
